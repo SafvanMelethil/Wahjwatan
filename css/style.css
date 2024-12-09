@@ -14,6 +14,42 @@
     z-index: 99;
 }
 
+.lone {
+    position: relative;
+    left: 5%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    gap: 15px;
+}
+  
+  .card {
+    width: 400px;
+    height: 300px;
+    background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%);    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out, background 0.6s ease-in-out;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card:hover {
+    transform: rotateY(360deg);
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  }
+  
+  .card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
 
 .hover-boxes {
     padding-top: 50px;
@@ -74,6 +110,40 @@
 .box:hover .hover-content {
     opacity: 1;
 }
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 100px; /* Adjusted from 20px to lift it a bit above the bottom */
+    right: 40px;
+    z-index: 1000;
+  }
+  
+  .whatsapp-float img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+   
+    animation: jump 2s infinite;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .whatsapp-float img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Jump animation */
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px); /* Make it jump a little higher */
+    }
+  }
+  
+  
 
 
 
