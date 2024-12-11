@@ -1,0 +1,172 @@
+     <!-- Search Start -->
+     <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+        <div class="container">
+            <div class="row g-2">
+                <div class="col-md-10">
+                    <div class="row g-2"> 
+                        
+                       
+                                         <!-- Select Dropdown -->
+    <div class="col-md-4">
+        <select id="propertyType" class="form-select border-0 py-3">
+            <option selected value="">اسم الإمارة</option>
+            <option value="riyadh">منطقة الرياض</option>
+            <option value="makkah">منطقة مكة المكرمة</option>
+            <option value="madinah">منطقة المدينة المنورة</option>
+            <option value="eastern">منطقة الشرقية</option>
+            <option value="qassim">منطقة القصيم</option>
+            <option value="asir">منطقة عسير</option>
+            <option value="hail">منطقة حائل</option>
+            <option value="tabuk">منطقة تبوك</option>
+            <option value="sea">منطقة البحر</option>
+            <option value="borders">منطقة حدودة</option>
+            <option value="jouf">منطقة الجوف</option>
+            <option value="jazan">منطقة جازان</option>
+            <option value="najran">منطقة نجران</option>
+        </select>
+    </div>
+    
+                    <div class="col-md-4">
+                        <select id="city" class="form-select border-0 py-3" disabled>
+                            <option selected value="">مقرها </option>
+                            <option value="factory">مدينة الرياض</option>
+                            <option value="warehouse">مكة المكرمة</option>
+                            <option value="residence">المدينة المنورة</option>
+                            <option value="factory">مدينة الدمام</option>
+                            <option value="warehouse">مدينة البريدة</option>
+                            <option value="residence">مدينة أبها</option>
+                            <option value="factory">مدينة حائل</option>
+                            <option value="warehouse"> مدينة تبوك</option>
+                            <option value="residence">مدينة الباحة</option>
+                            <option value="factory">مدينة عرعر</option>
+                            <option value="warehouse">مدينة سكاكا</option>
+                            <option value="residence">مدينة جازان</option>
+                            <option value="residence">مدينة نجران</option>
+                           
+                        </select>
+                    </div>
+    
+                    <div class="col-md-4">
+                        <select id="town" class="form-select border-0 py-3" disabled>
+                            <option selected value="">Select a town</option>
+                        </select>
+                    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Data for cascading dropdowns
+        const data = {
+            riyadh: {
+                cities: {
+                    "Riyadh City": ["Diriyah", "Al Olaya", "Al Malaz"],
+                    "Al Kharj": ["Al Kharj Town 1", "Al Kharj Town 2"],
+                    "Al Majmaah": ["Al Majmaah Town 1", "Al Majmaah Town 2"]
+                }
+            },
+            makkah: {
+                cities: {
+                    "Makkah City": ["Ajyad", "Misfalah", "Al Shubaika"],
+                    "Jeddah": ["Al Balad", "Al Hamra"],
+                    "Taif": ["Al Hada", "Al Shafa"]
+                }
+            },
+            madinah: {
+                cities: {
+                    "Madinah City": ["Quba", "Al Haram"],
+                    "Yanbu": ["Yanbu Town 1", "Yanbu Town 2"]
+                }
+            }
+        };
+    
+        // Navigation URLs for categories
+        const categoryLinks = {
+            factories: "https://example.com/factories",
+            warehouses: "https://example.com/warehouses",
+            housing: "https://example.com/housing"
+        };
+    
+        // Elements
+        const regionDropdown = document.getElementById("region");
+        const cityDropdown = document.getElementById("city");
+        const townDropdown = document.getElementById("town");
+        const categoryDropdown = document.getElementById("category");
+    
+        // Populate City Dropdown based on Region
+        regionDropdown.addEventListener("change", function () {
+            const selectedRegion = this.value;
+    
+            // Clear and disable dependent dropdowns
+            cityDropdown.innerHTML = '<option selected value="">Select a city</option>';
+            cityDropdown.disabled = true;
+            townDropdown.innerHTML = '<option selected value="">Select a town</option>';
+            townDropdown.disabled = true;
+            categoryDropdown.disabled = true;
+    
+            // Populate cities if region is selected
+            if (selectedRegion && data[selectedRegion]) {
+                const cities = Object.keys(data[selectedRegion].cities);
+                cities.forEach(city => {
+                    const option = document.createElement("option");
+                    option.value = city;
+                    option.textContent = city;
+                    cityDropdown.appendChild(option);
+                });
+                cityDropdown.disabled = false;
+            }
+        });
+    
+        // Populate Town Dropdown based on City
+        cityDropdown.addEventListener("change", function () {
+            const selectedCity = this.value;
+            const selectedRegion = regionDropdown.value;
+    
+            // Clear and disable dependent dropdowns
+            townDropdown.innerHTML = '<option selected value="">Select a town</option>';
+            townDropdown.disabled = true;
+            categoryDropdown.disabled = true;
+    
+            // Populate towns if city is selected
+            if (selectedCity && data[selectedRegion].cities[selectedCity]) {
+                const towns = data[selectedRegion].cities[selectedCity];
+                towns.forEach(town => {
+                    const option = document.createElement("option");
+                    option.value = town;
+                    option.textContent = town;
+                    townDropdown.appendChild(option);
+                });
+                townDropdown.disabled = false;
+            }
+        });
+    
+        // Enable Category Dropdown based on Town Selection
+        townDropdown.addEventListener("change", function () {
+            const selectedTown = this.value;
+    
+            // Enable category dropdown if town is selected
+            if (selectedTown) {
+                categoryDropdown.disabled = false;
+            } else {
+                categoryDropdown.disabled = true;
+            }
+        });
+    
+        // Redirect to URL based on Category Selection
+        categoryDropdown.addEventListener("change", function () {
+            const selectedCategory = this.value;
+    
+            if (selectedCategory && categoryLinks[selectedCategory]) {
+                // Redirect to the URL for the selected category
+                window.location.href = categoryLinks[selectedCategory];
+            }
+        });
+    </script>
+    
+                      
+                    </div>
+                </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search End -->

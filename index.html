@@ -57,7 +57,7 @@
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
                 <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
 
-                    <a href="" class="btn btn-primary px-3 d-none d-lg-flex">تسجيل الدخول                    </a>
+                    <a href="https://demos.farhanenterprise.site/logout" class="btn btn-primary px-3 d-none d-lg-flex">تسجيل الدخول                    </a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">نوع العقار
                         </a>
@@ -101,7 +101,8 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-l">ابحث عن <span class="text-primary">المكان المثالي</span> لبناء إمبراطوريتك</h1>
+                    <h1 class="display-5 animated fadeIn mb-l">
+                        <span class="text-primary">وهج وطن العقارية </span>متخصصون في بيع وشراء و استثمار الأراضي الصناعية و المستودعات التجارية و إسكان العمالة و إسكان الطلاب الجامعيين</h1>
                     <p class="animated fadeIn mb-4 pb-2">الجودة تعني القيام بالأمر بالشكل الصحيح عندما لا يراقبك أحد.
                     </p>
                     <a href="about.html" class="btn btn-below py-3 px-5 me-3 animated fadeIn">تعرف علينا
@@ -129,73 +130,194 @@
 
        
 
-      <!-- Search Start -->
+    <!-- Search Start -->
 <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
     <div class="container">
         <div class="row g-2">
             <div class="col-md-10">
                 <div class="row g-2">
-                    <div class="col-md-4">
-                        <input id="keyword" type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
-                    </div>
-                    <div class="col-md-4">
-                        <select id="propertyType" class="form-select border-0 py-3">
-                            <option selected value="">نوع العقار</option>
-                            <option value="factory">مصنع</option>
-                            <option value="warehouse">مستودع</option>
-                            <option value="residence">السكن</option>
+
+                     <!-- Category Dropdown -->
+                     <div class="col-md-3">
+                        <select id="category" class="form-select border-0 py-3" disabled>
+                            <option selected value="">Select a category</option>
+                            <option value="factories">Factories</option>
+                            <option value="warehouses">Warehouses</option>
+                            <option value="housing">Housing</option>
                         </select>
                     </div>
-                    <div class="col-md-4">
-                        <select id="location" class="form-select border-0 py-3">
-                            <option selected value="">موقع</option>
-                            <option value="jeddah">جدة</option>
-                            <option value="makkah">مكة</option>
-                            <option value="madina">المدينة المنورة</option>
+
+
+                    
+
+                    <!-- Town Dropdown -->
+                    <div class="col-md-3">
+                        <select id="town" class="form-select border-0 py-3" disabled>
+                            <option selected value="">Select a town</option>
                         </select>
                     </div>
+
+                   
+                    <!-- City Dropdown -->
+                    <div class="col-md-3">
+                        <select id="city" class="form-select border-0 py-3" disabled>
+                            <option selected value="">مقرها</option>
+                            <option value="riyadhCity">مدينة الرياض</option>
+                            <option value="makkahCity">مكة المكرمة</option>
+                            <option value="madinahCity">المدينة المنورة</option>
+                            <option value="dammam">مدينة الدمام</option>
+                            <option value="buraidah">مدينة البريدة</option>
+                            <option value="abha">مدينة أبها</option>
+                            <option value="hailCity">مدينة حائل</option>
+                            <option value="tabukCity">مدينة تبوك</option>
+                            <option value="bahah">مدينة الباحة</option>
+                            <option value="arar">مدينة عرعر</option>
+                            <option value="sakaka">مدينة سكاكا</option>
+                            <option value="jazanCity">مدينة جازان</option>
+                            <option value="najranCity">مدينة نجران</option>
+                        </select>
+                    </div>
+
+                    <!-- Emirate Dropdown (Right-aligned) -->
+                    <div class="col-md-3">
+                        <select id="region" class="form-select border-0 py-3 text-end" style="direction: rtl;">
+                            <option selected value="">اسم الإمارة</option>
+                            <option value="riyadh">منطقة الرياض</option>
+                            <option value="makkah">منطقة مكة المكرمة</option>
+                            <option value="madinah">منطقة المدينة المنورة</option>
+                            <option value="eastern">منطقة الشرقية</option>
+                            <option value="qassim">منطقة القصيم</option>
+                            <option value="asir">منطقة عسير</option>
+                            <option value="hail">منطقة حائل</option>
+                            <option value="tabuk">منطقة تبوك</option>
+                            <option value="sea">منطقة البحر</option>
+                            <option value="borders">منطقة حدودة</option>
+                            <option value="jouf">منطقة الجوف</option>
+                            <option value="jazan">منطقة جازان</option>
+                            <option value="najran">منطقة نجران</option>
+                        </select>
+                    </div>
+
+
+
                 </div>
             </div>
+
+            <!-- Search Button -->
             <div class="col-md-2">
                 <button id="searchBtn" class="btn btn-dark border-0 w-100 py-3">Search</button>
             </div>
         </div>
     </div>
 </div>
-<!-- Search End -->
+
+<!-- JavaScript -->
 <script>
-    document.getElementById("searchBtn").addEventListener("click", function () {
-    const propertyType = document.getElementById("propertyType").value;
-    const location = document.getElementById("location").value;
-
-    // Base URL for each property type
-    const pages = {
-        factory: "factories.html",
-        warehouse: "warehouse.html",
-        residence: "residence.html",
+    // Data for cascading dropdowns
+    const data = {
+        riyadh: {
+            cities: {
+                "مدينة الرياض": ["الدرعية", "الخرج", "الدوادمي", "المجمعة", "القويعية","الأفلاج","اديالدواسر", "الزلفي","شقراء","حوطة","عفيف","الغاط"],
+               
+            }
+        },
+        makkah: {
+            cities: {
+                "مكة المكرمة": ["جدة", "الطائف"],
+                
+            }
+        },
+        madinah: {
+            cities: {
+                "المدينة المنورة": ["Quba", "Al Haram"],
+                "ينبع": ["Yanbu Town 1", "Yanbu Town 2"]
+            }
+        }
     };
 
-    // Tabs for each location
-    const tabs = {
-        جدة: "tab-4",
-        مكة: "tab-5",
-       madina: "tab-6",
+    // Navigation URLs for categories
+    const categoryLinks = {
+        factories: "factories.html",
+        warehouses: "warehouse.html",
+        housing: "https://example.com/housing"
     };
 
-    if (propertyType && location) {
-        // Construct the URL
-        const page = pages[propertyType];
-        const tab = tabs[location];
-        const url = `${page}#${tab}`;
+    // Elements
+    const regionDropdown = document.getElementById("region");
+    const cityDropdown = document.getElementById("city");
+    const townDropdown = document.getElementById("town");
+    const categoryDropdown = document.getElementById("category");
 
-        // Redirect the user
-        window.location.href = url;
-    } else {
-        alert("Please select both property type and location.");
-    }
-});
+    // Populate City Dropdown based on Region
+    regionDropdown.addEventListener("change", function () {
+        const selectedRegion = this.value;
 
+        // Clear and disable dependent dropdowns
+        cityDropdown.innerHTML = '<option selected value="">مقرها</option>';
+        cityDropdown.disabled = true;
+        townDropdown.innerHTML = '<option selected value="">Select a town</option>';
+        townDropdown.disabled = true;
+        categoryDropdown.disabled = true;
+
+        // Populate cities if region is selected
+        if (selectedRegion && data[selectedRegion]) {
+            const cities = Object.keys(data[selectedRegion].cities);
+            cities.forEach(city => {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                cityDropdown.appendChild(option);
+            });
+            cityDropdown.disabled = false;
+        }
+    });
+
+    // Populate Town Dropdown based on City
+    cityDropdown.addEventListener("change", function () {
+        const selectedCity = this.value;
+        const selectedRegion = regionDropdown.value;
+
+        // Clear and disable dependent dropdowns
+        townDropdown.innerHTML = '<option selected value="">Select a town</option>';
+        townDropdown.disabled = true;
+        categoryDropdown.disabled = true;
+
+        // Populate towns if city is selected
+        if (selectedCity && data[selectedRegion].cities[selectedCity]) {
+            const towns = data[selectedRegion].cities[selectedCity];
+            towns.forEach(town => {
+                const option = document.createElement("option");
+                option.value = town;
+                option.textContent = town;
+                townDropdown.appendChild(option);
+            });
+            townDropdown.disabled = false;
+        }
+    });
+
+    // Enable Category Dropdown based on Town Selection
+    townDropdown.addEventListener("change", function () {
+        const selectedTown = this.value;
+
+        // Enable category dropdown if town is selected
+        if (selectedTown) {
+            categoryDropdown.disabled = false;
+        } else {
+            categoryDropdown.disabled = true;
+        }
+    });
+
+    // Redirect to URL based on Category Selection
+    categoryDropdown.addEventListener("change", function () {
+        const selectedCategory = this.value;
+
+        if (selectedCategory && categoryLinks[selectedCategory]) {
+            // Redirect to the URL for the selected category
+            window.location.href = categoryLinks[selectedCategory];
+        }
+    });
 </script>
+
 
 
 <div class="lone">
@@ -204,7 +326,7 @@
     </h3>
     </div>
     <div class="card" onclick="navigate('lh.html')">
-      <h3>السكن العمالي
+      <h3>إسكان العماله
     </h3>
     </div>
     <div class="card" onclick="navigate('il.html')">
@@ -630,7 +752,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <a href=""><img class="img-fluid" src="appartment-1/benoit-roy-vzxUab5awb0-unsplash.jpg" alt=""></a>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
                                     </div>
                                     <div class="p-4 pb-0">
@@ -641,7 +763,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <a href=""><img class="img-fluid" src="appartment-2/daniel-moore-W1n47uA5oeU-unsplash.jpg" alt=""></a>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
                                     </div>
                                     <div class="p-4 pb-0">
@@ -652,7 +774,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <a href=""><img class="img-fluid" src="appartment-1/denise-jans-ETSKXetuAbg-unsplash.jpg" alt=""></a>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
                                     </div>
                                     <div class="p-4 pb-0">
@@ -663,7 +785,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <a href=""><img class="img-fluid" src="appartment-2/daniel-moore-YeTTNuWf4Js-unsplash.jpg" alt=""></a>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
                                     </div>
                                     <div class="p-4 pb-0">
@@ -674,7 +796,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <a href=""><img class="img-fluid" src="appartment-1/ruben-hanssen-eTTizEeGaIE-unsplash.jpg" alt=""></a>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
                                     </div>
                                     <div class="p-4 pb-0">
@@ -685,7 +807,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <a href=""><img class="img-fluid" src="appartment-2/mohd-zuber-saifi-RF-JMjWnjAM-unsplash.jpg" alt=""></a>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
                                     </div>
                                     <div class="p-4 pb-0">
